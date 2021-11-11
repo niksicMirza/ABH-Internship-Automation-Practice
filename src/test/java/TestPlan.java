@@ -64,7 +64,7 @@ public class TestPlan {
         createAnAccountPage.enterMobileNumber();
         createAnAccountPage.enterAddressAlias();
         createAnAccountPage.pressRegisterButton();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the title
         assertEquals(Utils.MY_ACCOUNT_PAGE_TITLE, driver.getTitle());
@@ -132,7 +132,7 @@ public class TestPlan {
         homePage.enterSearchBarText();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //check the heading
-        assertEquals("T-Shirt", searchPage.searchHeading.getText());
+        assertEquals("\"T-SHIRT\"", searchPage.searchHeading.getText());
 
         homePage.singOut();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -142,7 +142,7 @@ public class TestPlan {
 
     @Test
     public static void test() throws InterruptedException {
-        driver.get(Utils.SUMMER_DRESSES_URL);
+        driver.get(Utils.HOME_PAGE_URL);
         driver.manage().window().maximize();
         HomePage homePage = new HomePage(driver);
         SummerDressesPage summerDressesPage = new SummerDressesPage(driver);
@@ -152,76 +152,12 @@ public class TestPlan {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         SearchPage searchPage = new SearchPage(driver);
 
-        summerDressesPage.openLoginPage();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        loginPage.enterEmailAddress();
-        loginPage.enterPassword();
-        loginPage.pressLoginButton();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        driver.get(Utils.SUMMER_DRESSES_URL);
-        summerDressesPage.openQuickView();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.switchTo().frame(0);
-        quickViewPage.clickPlusButton();
-        quickViewPage.selectSize();
-        quickViewPage.clickAddToCartButton();
-
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.switchTo().defaultContent();
-        System.out.print(driver.getTitle());
-
-        summerDressesPage.clickProceedToCheckoutButton();
-        Thread.sleep(5000);
-
-        cartPage.clickPlusButton();
-        cartPage.clickProceedToCheckoutButton();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the heading
-        assertEquals(Utils.ADDRESSES_CART_PAGE_HEADING, cartPage.carts_headings.getText());
-
-        cartPage.selectDeliveryAddress();
-        if(!cartPage.addressesEqualCheckbox.isSelected()){
-            cartPage.clickOnEqualAddressesCheckbox();
-        }
-        cartPage.clickProceedToCheckoutButtonAddresses();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Thread.sleep(5000);
-        //check the heading
-        assertEquals(Utils.SHIPPING_CART_PAGE_HEADING, cartPage.carts_headings_shipping.getText());
-
-        cartPage.checkTermsOfService();
-        cartPage.clickProceedToCheckoutButtonShipping();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the heading
-        assertEquals(Utils.PAYMENT_CART_PAGE_HEADING, cartPage.carts_headings.getText());
-
-
-        cartPage.clickOnPayByCheck();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the heading
-        assertEquals(Utils.ORDER_SUMMARY_CART_PAGE_HEADING, cartPage.carts_headings.getText());
-
-
-        cartPage.clickOnConfirmOrderButton();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the heading
-        assertEquals(Utils.ORDER_CONFIRMATION_CART_PAGE_HEADING, cartPage.carts_headings.getText());
-
-        myAccountPage.clickOnLogo();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the title
-        assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
-
         homePage.enterSearchBarText();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //check the heading
-        assertEquals("T-Shit", searchPage.searchHeading.getText());
+        assertEquals("\"T-SHIRT\"", searchPage.searchHeading.getText());
 
-        homePage.singOut();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check if the sign in button is displayed
-        assertEquals(true, homePage.sign_in_button.isDisplayed());
+
     }
 
     @AfterTest

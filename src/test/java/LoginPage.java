@@ -4,9 +4,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageObject{
 
-    private final String CREATE_AN_ACCOUNT_EMAIL = "test_email_example8@gmail.com";
-    private final String EMAIL_ADDRESS = "mirza.niksic5@gmail.com";
-    private final String PASSWORD = "123456";
+    GenerateCredentials generateCredentials = new GenerateCredentials();
+
+    private final String CREATE_AN_ACCOUNT_EMAIL = generateCredentials.emailAddressGenerator();
+    private final String EMAIL_ADDRESS = CREATE_AN_ACCOUNT_EMAIL;
+    private final String PASSWORD = generateCredentials.passwordGenerator();
 
     @FindBy(id = "email_create")
     private WebElement email_create;
@@ -64,6 +66,5 @@ public class LoginPage extends PageObject{
     public void verifyLoginError(){
         this.loginError.isDisplayed();
     }
-
 
 }
