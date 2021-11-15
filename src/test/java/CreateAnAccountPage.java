@@ -5,104 +5,109 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateAnAccountPage extends PageObject{
 
-    private final String FIRST_NAME = "Tester";
-    private final String LAST_NAME = "Tester";
-    private final String EMAIL_ADDRESS = "test_email_example4@gmail.com";
-    private final String PASSWORD = "123456";
-    private final String DAY_OF_BIRTH = "26";
-    private final String MONTH_OF_BIRTH = "10";
-    private final String YEAR_OF_BIRTH = "1999";
-    private final String FIRST_NAME_ADDRESS = "Tester";
-    private final String LAST_NAME_ADDRESS = "Tester";
-    private final String COMPANY = "Company";
-    private final String ADDRESS = "Address 99";
-    private final String CITY = "Sarajevo";
-    private final String STATE = "Colorado";
-    private final String ZIP = "71000";
-    private final String COUNTRY = "United States";
-    private final String ADDITIONAL_INFORMATION = "Some additional information.";
-    private final String MOBILE_NUMBER = "061875968";
-    private final String HOME_NUMBER = "033589654";
-    private final String ADDRESS_ALIAS = "Address alias";
+    GenerateCredentials generateCredentials = new GenerateCredentials();
+
+
+    protected final String FIRST_NAME = "Tester";
+    protected final String LAST_NAME = "Tester";
+    protected final String ENCODED_PASSWORD = generateCredentials.encodePassword(GenerateCredentials.passwordGenerator());
+    protected final String PASSWORD = generateCredentials.decodePassword(ENCODED_PASSWORD);
+    protected final String DAY_OF_BIRTH = "26";
+    protected final String MONTH_OF_BIRTH = "10";
+    protected final String YEAR_OF_BIRTH = "1999";
+    protected final String FIRST_NAME_ADDRESS = "Tester";
+    protected final String LAST_NAME_ADDRESS = "Tester";
+    protected final String COMPANY = "Company";
+    protected final String ADDRESS = "Address 99";
+    protected final String CITY = "Sarajevo";
+    protected final String STATE = "Colorado";
+    protected final String STATE_VALUE = "6";
+    protected final String ZIP = "71000";
+    protected final String COUNTRY = "United States";
+    protected final String COUNTRY_VALUE = "21";
+    protected final String ADDITIONAL_INFORMATION = "Some additional information.";
+    protected final String MOBILE_NUMBER = "061875968";
+    protected final String HOME_NUMBER = "033589654";
+    protected final String ADDRESS_ALIAS = "Address alias";
 
 
     @FindBy(id = "id_gender1")
-    private WebElement male_gender;
+    protected WebElement male_gender;
 
     @FindBy(id = "id_gender2")
-    private WebElement female_gender;
+    protected WebElement female_gender;
 
     @FindBy(id = "customer_firstname")
-    private WebElement customer_firstname;
+    protected WebElement customer_firstname;
 
     @FindBy(id = "customer_lastname")
-    private WebElement customer_lastname;
+    protected WebElement customer_lastname;
 
     @FindBy(id = "email")
-    private WebElement email;
+    protected WebElement email;
 
     @FindBy(id = "passwd")
-    private WebElement passwd;
+    protected WebElement passwd;
 
     @FindBy(id = "days")
-    private WebElement day_of_birth;
+    protected WebElement day_of_birth;
 
     @FindBy(id = "months")
-    private WebElement month_of_birth;
+    protected WebElement month_of_birth;
 
     @FindBy(id = "years")
-    private WebElement year_of_birth;
+    protected WebElement year_of_birth;
 
     @FindBy(id = "newsletter")
-    private WebElement newsletter;
+    protected WebElement newsletter;
 
     @FindBy(id = "optin")
-    private WebElement special_offers;
+    protected WebElement special_offers;
 
     @FindBy(id = "firstname")
-    private WebElement address_firstname;
+    protected WebElement address_firstname;
 
     @FindBy(id = "lastname")
-    private WebElement address_lastname;
+    protected WebElement address_lastname;
 
     @FindBy(id = "company")
-    private WebElement company;
+    protected WebElement company;
 
     @FindBy(id = "address1")
-    private WebElement address;
+    protected WebElement address;
 
     @FindBy(id = "address2")
-    private WebElement address2;
+    protected WebElement address2;
 
     @FindBy(id = "city")
-    private WebElement city;
+    protected WebElement city;
 
     @FindBy(id = "id_state")
-    private WebElement state;
+    protected WebElement state;
 
     @FindBy(id = "postcode")
-    private WebElement zip_code;
+    protected WebElement zip_code;
 
     @FindBy(id = "id_country")
-    private WebElement country;
+    protected WebElement country;
 
     @FindBy(id = "other")
-    private WebElement additional_information;
+    protected WebElement additional_information;
 
     @FindBy(id = "phone")
-    private WebElement home_number;
+    protected WebElement home_number;
 
     @FindBy(id = "phone_mobile")
-    private WebElement phone_number;
+    protected WebElement phone_number;
 
     @FindBy(id = "alias")
-    private WebElement alias;
+    protected WebElement alias;
 
     @FindBy(id = "submitAccount")
-    private WebElement submitAccount;
+    protected WebElement submitAccount;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div")
-    private WebElement createAccountError;
+    protected WebElement createAccountError;
 
     public CreateAnAccountPage(WebDriver driver) {
         super(driver);
@@ -118,11 +123,6 @@ public class CreateAnAccountPage extends PageObject{
 
     public void enterLastName(){
         this.customer_lastname.sendKeys(LAST_NAME);
-    }
-
-    public void enterEmailAddress(){
-        this.email.clear();
-        this.email.sendKeys(EMAIL_ADDRESS);
     }
 
     public void enterPassword(){
