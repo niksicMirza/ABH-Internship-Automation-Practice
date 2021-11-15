@@ -12,23 +12,23 @@ public class CreateAnAccountPage extends PageObject{
     protected final String LAST_NAME = "Tester";
     protected final String ENCODED_PASSWORD = generateCredentials.encodePassword(GenerateCredentials.passwordGenerator());
     protected final String PASSWORD = generateCredentials.decodePassword(ENCODED_PASSWORD);
-    protected final String DAY_OF_BIRTH = "26";
+    protected final String DAY_OF_BIRTH = "14";
     protected final String MONTH_OF_BIRTH = "10";
-    protected final String YEAR_OF_BIRTH = "1999";
+    protected final String YEAR_OF_BIRTH = "1983";
     protected final String FIRST_NAME_ADDRESS = "Tester";
     protected final String LAST_NAME_ADDRESS = "Tester";
-    protected final String COMPANY = "Company";
-    protected final String ADDRESS = "Address 99";
+    protected final String COMPANY = "Atlantbh";
+    protected final String ADDRESS = "Ruzevik 22";
     protected final String CITY = "Sarajevo";
-    protected final String STATE = "Colorado";
-    protected final String STATE_VALUE = "6";
-    protected final String ZIP = "71000";
+    protected final String STATE = "Alabama";
+    protected final String STATE_VALUE = "1";
+    protected final String ZIP = "71251";
     protected final String COUNTRY = "United States";
     protected final String COUNTRY_VALUE = "21";
-    protected final String ADDITIONAL_INFORMATION = "Some additional information.";
-    protected final String MOBILE_NUMBER = "061875968";
-    protected final String HOME_NUMBER = "033589654";
-    protected final String ADDRESS_ALIAS = "Address alias";
+    protected final String ADDITIONAL_INFORMATION = "Nulla quis lorem ut libero malesuada feugiat.";
+    protected final String MOBILE_NUMBER = "0636587";
+    protected final String HOME_NUMBER = "0335964";
+    protected final String ADDRESS_ALIAS = "My address";
 
 
     @FindBy(id = "id_gender1")
