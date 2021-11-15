@@ -1,5 +1,3 @@
-
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -36,31 +34,16 @@ public class TestPlan {
         SearchPage searchPage = new SearchPage(driver);
         GenerateCredentials generateCredentials = new GenerateCredentials();
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the title
         assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
         homePage.openLoginPage();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         //check the title
         assertEquals(Utils.LOGIN_PAGE_TITLE, driver.getTitle());
         loginPage.enterCreateEmailAddress();
         loginPage.pressCreateButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         //check the title
         assertEquals(Utils.CREATE_AN_ACCOUNT_PAGE_TITLE, driver.getTitle());
@@ -108,40 +91,20 @@ public class TestPlan {
         createAnAccountPage.pressRegisterButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the title
         assertEquals(Utils.MY_ACCOUNT_PAGE_TITLE, driver.getTitle());
         myAccountPage.clickOnLogo();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         //check the title
         assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
         homePage.openSummerDresses();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the title
         assertEquals(Utils.SUMMER_DRESSES_TITLE, driver.getTitle());
         summerDressesPage.openQuickView();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         driver.switchTo().frame(0);
         quickViewPage.clickPlusButton();
@@ -152,29 +115,13 @@ public class TestPlan {
         quickViewPage.clickAddToCartButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         driver.switchTo().defaultContent();
         summerDressesPage.clickProceedToCheckoutButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         cartPage.clickPlusButton();
         cartPage.clickProceedToCheckoutButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the heading
         assertEquals(Utils.ADDRESSES_CART_PAGE_HEADING, cartPage.carts_headings.getText());
 
@@ -185,11 +132,6 @@ public class TestPlan {
         cartPage.clickProceedToCheckoutButtonAddresses();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the heading
         assertEquals(Utils.SHIPPING_CART_PAGE_HEADING, cartPage.carts_headings_shipping.getText());
 
@@ -199,21 +141,11 @@ public class TestPlan {
         cartPage.clickProceedToCheckoutButtonShipping();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the heading
         assertEquals(Utils.PAYMENT_CART_PAGE_HEADING, cartPage.carts_headings.getText());
 
         cartPage.clickOnPayByCheck();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         //check the heading
         assertEquals(Utils.ORDER_SUMMARY_CART_PAGE_HEADING, cartPage.carts_headings.getText());
@@ -221,21 +153,11 @@ public class TestPlan {
         cartPage.clickOnConfirmOrderButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the heading
         assertEquals(Utils.ORDER_CONFIRMATION_CART_PAGE_HEADING, cartPage.carts_headings.getText());
 
         myAccountPage.clickOnLogo();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
 
         //check the title
         assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
@@ -243,25 +165,13 @@ public class TestPlan {
         homePage.enterSearchBarText();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check the heading
         assertEquals("\"T-SHIRT\"", searchPage.searchHeading.getText());
 
         homePage.singOut();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        //check if the limit is reached
-        if(driver.getTitle().equals(Utils.LIMIT_REACHED_TITLE)){
-            System.out.println("Limit is reached. Smoke test is stopped. Try again.");
-        }
-
         //check if the sign in button is displayed
         assertEquals(true, homePage.sign_in_button.isDisplayed());
-
     }
 
     @AfterTest
