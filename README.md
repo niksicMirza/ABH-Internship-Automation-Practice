@@ -26,9 +26,13 @@ I have used following technologies in this project:
 
 - Install Java 1.8
 - Install InteliJ
+- Install Maven
 - Open InteliJ 
+- Chcek if the Google Chrome version is same as in the project
 - Clone my repository using InteliJ console
 - Open project
-- Open pom.xml file and install all dependencies
+- Open pom.xml file
+- Check if the dependencies are up to date
+- Install all dependencies
 - In "Select Run/Debug Configuration" select TestPlan.smokeTest
 - Click Run or Debug
