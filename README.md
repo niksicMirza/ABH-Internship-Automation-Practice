@@ -10,7 +10,7 @@ For better understanding of the project, you can visit following links.
 - Project functionalities: https://docs.google.com/document/d/1BDn-mlZplLXehzGFCocQUJvzU5QJKipNStM_oOHoXos/edit?usp=sharing
 - Test cases link: https://docs.google.com/document/d/1MIl8zd0ODnsnaJKyCOAO3k4Bsylgf_DkRPbkx_SQ8AI/edit?usp=sharing
 - Bug report link: https://docs.google.com/document/d/14L9xuxDfSZdm5O-jYoddIX-d8y_uYd2HbRDP5XN49KM/edit?usp=sharing
-- Improvment report link: https://docs.google.com/document/d/1WyxvWr9fAhP1RZr0nvDqSu8PFNUoOf2ouK_uuKN_VkA/edit?usp=sharing
+- Improvement report link: https://docs.google.com/document/d/1WyxvWr9fAhP1RZr0nvDqSu8PFNUoOf2ouK_uuKN_VkA/edit?usp=sharing
 
 
 # Techonologies 
