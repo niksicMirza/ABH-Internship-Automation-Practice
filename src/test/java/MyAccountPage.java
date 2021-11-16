@@ -5,22 +5,19 @@ import org.openqa.selenium.support.FindBy;
 public class MyAccountPage extends PageObject{
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a")
-    private WebElement orderHistoryAndDetails;
-
+    protected WebElement orderHistoryAndDetails;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[2]/a")
-    private WebElement myCreditSlips;
-
+    protected WebElement myCreditSlips;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[3]/a")
-    private WebElement myAddress;
-
+    protected WebElement myAddress;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[4]/a")
-    private WebElement myPersonalInformation;
+    protected WebElement myPersonalInformation;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[2]/ul/li/a")
-    private WebElement myWishlist;
+    protected WebElement myWishlist;
 
 
 
