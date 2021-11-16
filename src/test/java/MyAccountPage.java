@@ -4,9 +4,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAccountPage extends PageObject{
 
-    @FindBy(xpath = "//*[@id=\"header_logo\"]/a/img")
-    private WebElement logoImage;
-
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a")
     private WebElement orderHistoryAndDetails;
 
@@ -30,12 +27,6 @@ public class MyAccountPage extends PageObject{
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
-
-    public void clickOnLogo(){
-        this.logoImage.click();
-    }
-
-
 
     public void openOrderHistoryAndDetails(){
         this.orderHistoryAndDetails.click();

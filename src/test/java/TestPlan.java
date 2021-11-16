@@ -1,3 +1,4 @@
+import net.bytebuddy.build.ToStringPlugin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -34,19 +35,31 @@ public class TestPlan {
         SearchPage searchPage = new SearchPage(driver);
         GenerateCredentials generateCredentials = new GenerateCredentials();
 
-        //check the title
-        assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
+        assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+
         homePage.openLoginPage();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        //check the title
-        assertEquals(Utils.LOGIN_PAGE_TITLE, driver.getTitle());
+        assertEquals(Utils.LOGIN_PAGE_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(loginPage.submit_create.isDisplayed());  //check if submit button is displayed
+        assertTrue(loginPage.email_create.isDisplayed());  //check if email input field is displayed
+
         loginPage.enterCreateEmailAddress();
         loginPage.pressCreateButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        //check the title
-        assertEquals(Utils.CREATE_AN_ACCOUNT_PAGE_TITLE, driver.getTitle());
+        assertEquals(Utils.CREATE_AN_ACCOUNT_PAGE_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue( homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(createAnAccountPage.submitAccount.isDisplayed());  //check if submit button is displayed
+
         createAnAccountPage.selectTitle();
         assertTrue(createAnAccountPage.male_gender.isSelected());
         createAnAccountPage.enterFirstName();
@@ -91,18 +104,28 @@ public class TestPlan {
         createAnAccountPage.pressRegisterButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check the title
-        assertEquals(Utils.MY_ACCOUNT_PAGE_TITLE, driver.getTitle());
-        myAccountPage.clickOnLogo();
+        assertEquals(Utils.MY_ACCOUNT_PAGE_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        homePage.clickOnLogo();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //check the title
-        assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
+        assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+
         homePage.openSummerDresses();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the title
-        assertEquals(Utils.SUMMER_DRESSES_TITLE, driver.getTitle());
+        assertEquals(Utils.SUMMER_DRESSES_TITLE, driver.getTitle()); //check the title
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(summerDressesPage.filters.isDisplayed()); //check if filters is displayed
+
         summerDressesPage.openQuickView();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -111,7 +134,6 @@ public class TestPlan {
         assertEquals("2", quickViewPage.quantityBox.getAttribute("value"));
         quickViewPage.selectSize();
         assertEquals(quickViewPage.SIZE, quickViewPage.size_dropdown.getAttribute("value"));
-        //assertTrue(quickViewPage.size_dropdown.isSelected());
         quickViewPage.clickAddToCartButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -119,11 +141,24 @@ public class TestPlan {
         summerDressesPage.clickProceedToCheckoutButton();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
+        assertEquals(Utils.CART_PAGE_TITLE, driver.getTitle()); //check the heading
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.icon_trash.isDisplayed()); //check if trash icon is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
+
         cartPage.clickPlusButton();
         cartPage.clickProceedToCheckoutButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check the heading
-        assertEquals(Utils.ADDRESSES_CART_PAGE_HEADING, cartPage.carts_headings.getText());
+
+        assertEquals(Utils.ADDRESSES_CART_PAGE_HEADING, cartPage.carts_headings.getText()); //check the heading
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
+        assertTrue(cartPage.address_delivery_box.isDisplayed()); //check if address delivery box is displayed
+        assertTrue(cartPage.billing_address_box.isDisplayed()); //check if billing address box is displayed
 
         cartPage.selectDeliveryAddress();
         if(!cartPage.addressesEqualCheckbox.isSelected()){   //check if the checkbox is not checked
@@ -134,6 +169,10 @@ public class TestPlan {
 
         //check the heading
         assertEquals(Utils.SHIPPING_CART_PAGE_HEADING, cartPage.carts_headings_shipping.getText());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
 
         if(!cartPage.termsOfServiceCheck.isSelected()){  //check if the checkbox is not checked
             cartPage.checkTermsOfService();
@@ -143,35 +182,60 @@ public class TestPlan {
 
         //check the heading
         assertEquals(Utils.PAYMENT_CART_PAGE_HEADING, cartPage.carts_headings.getText());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
+        assertTrue(cartPage.cart_summary_box.isDisplayed()); //check if order step is displayed
 
         cartPage.clickOnPayByCheck();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the heading
         assertEquals(Utils.ORDER_SUMMARY_CART_PAGE_HEADING, cartPage.carts_headings.getText());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
+        assertTrue(cartPage.check_payment_box.isDisplayed()); //check if check payment box is displayed
 
         cartPage.clickOnConfirmOrderButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the heading
         assertEquals(Utils.ORDER_CONFIRMATION_CART_PAGE_HEADING, cartPage.carts_headings.getText());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(cartPage.order_steps.isDisplayed()); //check if order step is displayed
+        assertTrue(cartPage.box_order_confirmation.isDisplayed()); //check if order confirmation box is displayed
 
-        myAccountPage.clickOnLogo();
+        homePage.clickOnLogo();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the title
         assertEquals(Utils.HOME_PAGE_TITLE, driver.getTitle());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(homePage.searchBar.isDisplayed()); //check if search bar is visible
 
         homePage.enterSearchBarText();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //check the heading
         assertEquals("\"T-SHIRT\"", searchPage.searchHeading.getText());
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
+        assertTrue(summerDressesPage.best_sellers.isDisplayed()); //check if best sellers block is displayed
 
         homePage.singOut();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //check if the sign in button is displayed
-        assertEquals(true, homePage.sign_in_button.isDisplayed());
+        assertTrue(homePage.sign_in_button.isDisplayed()); //check if the sign in button is displayed
+        assertTrue(homePage.top_menu.isDisplayed()); //check if top menu is displayed
+        assertTrue(homePage.logo.isDisplayed()); //check if logo is displayed
+        assertTrue(homePage.footer.isDisplayed()); //check if footer is displayed
     }
 
     @AfterTest

@@ -6,6 +6,15 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CartPage extends PageObject{
 
+    @FindBy(id = "cart_summary")
+    protected WebElement cart_summary_box;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/form[1]/div[1]")
+    protected WebElement check_payment_box;
+
+    @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]")
+    protected WebElement box_order_confirmation;
+
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/a[2]")
     protected WebElement plus_button;
 
@@ -30,6 +39,12 @@ public class CartPage extends PageObject{
     @FindBy(id = "id_address_delivery")
     protected WebElement deliveryAddressDropdown;
 
+    @FindBy(id = "address_delivery")
+    protected WebElement address_delivery_box;
+
+    @FindBy(id = "address_invoice")
+    protected WebElement billing_address_box;
+
     @FindBy(id = "addressesAreEquals")
     protected WebElement addressesEqualCheckbox;
 
@@ -41,6 +56,12 @@ public class CartPage extends PageObject{
 
     @FindBy(xpath = "//*[@id=\"cart_navigation\"]/button")
     protected WebElement confirmOrderButton;
+
+    @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]")
+    protected WebElement icon_trash;
+
+    @FindBy(id = "order_step")
+    protected WebElement order_steps;
 
     public CartPage(WebDriver driver) {
         super(driver);

@@ -9,35 +9,43 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SummerDressesPage extends PageObject{
 
     @FindBy(xpath = "//a[contains(text(),'Sign in')]")
-    private WebElement sign_in_button;
+    protected WebElement sign_in_button;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[3]/div/div[1]/div/a[2]")
-    private WebElement quick_view;
+    protected WebElement quick_view;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[2]")
-    private WebElement more_button;
+    protected WebElement more_button;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[1]")
-    private WebElement add_to_cart;
+    protected WebElement add_to_cart;
 
     @FindBy(xpath = "//*[@alt='Printed Chiffon Dress']")
-    private WebElement image;
+    protected WebElement image;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-    private WebElement womenCategory;
+    protected WebElement womenCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-    private WebElement dressesCategory;
+    protected WebElement dressesCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a")
-    private WebElement summerDressesSubcategory;
+    protected WebElement summerDressesSubcategory;
 
     @FindBy(xpath = "//*[@id=\"add_to_cart\"]/button")
-    private WebElement addToCartButton;
+    protected WebElement addToCartButton;
 
     @FindBy(xpath = "//body[1]/div[1]/div[1]/header[1]/div[3]/div[1]/div[1]/div[4]/div[1]/div[2]/div[4]/a[1]/span[1]")
-    private WebElement proceedToCheckoutButton;
+    protected WebElement proceedToCheckoutButton;
 
+    @FindBy(id = "layered_block_left")
+    protected WebElement filters;
+
+    @FindBy(id = "selectProductSort")
+    protected WebElement sort_by_dropdown;
+
+    @FindBy(id = "best-sellers_block_right")
+    protected WebElement best_sellers;
 
     public SummerDressesPage(WebDriver driver) {
         super(driver);

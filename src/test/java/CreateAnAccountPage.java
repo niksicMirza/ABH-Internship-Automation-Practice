@@ -118,10 +118,12 @@ public class CreateAnAccountPage extends PageObject{
     }
 
     public void enterFirstName(){
+        this.customer_firstname.clear();
         this.customer_firstname.sendKeys(FIRST_NAME);
     }
 
     public void enterLastName(){
+        this.customer_lastname.clear();
         this.customer_lastname.sendKeys(LAST_NAME);
     }
 
@@ -153,10 +155,12 @@ public class CreateAnAccountPage extends PageObject{
     }
 
     public void enterFirstNameAddress(){
+        this.address_firstname.clear();
         this.address_firstname.sendKeys(FIRST_NAME_ADDRESS);
     }
 
     public void enterLastNameAddress(){
+        this.address_lastname.clear();
         this.address_lastname.sendKeys(LAST_NAME_ADDRESS);
     }
 

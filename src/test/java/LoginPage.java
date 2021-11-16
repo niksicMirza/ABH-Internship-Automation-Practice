@@ -12,16 +12,16 @@ public class LoginPage extends PageObject{
     protected WebElement email_create;
 
     @FindBy(id = "SubmitCreate")
-    private WebElement submit_create;
+    protected WebElement submit_create;
 
     @FindBy(xpath = "//*[@id=\"login_form\"]/div/p[1]/a")
-    private WebElement forgotPassword;
+    protected WebElement forgotPassword;
 
     @FindBy(xpath = "//*[@id=\"create_account_error\"]/ol/li")
-    private WebElement createAccountError;
+    protected WebElement createAccountError;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]")
-    private WebElement loginError;
+    protected WebElement loginError;
 
 
     public LoginPage(WebDriver driver) {

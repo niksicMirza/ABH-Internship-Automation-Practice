@@ -8,38 +8,47 @@ public class HomePage extends PageObject{
 
     private final String SEARCH = "T-Shirt";
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/header[1]/div[3]/div[1]/div[1]/div[1]/a[1]/img[1]")
+    protected WebElement logo;
+
+    @FindBy(id = "block_top_menu")
+    protected WebElement top_menu;
+
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
     protected WebElement sign_in_button;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
-    private WebElement sign_out_button;
+    protected WebElement sign_out_button;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[2]")
-    private WebElement quick_view;
+    protected WebElement quick_view;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[2]")
-    private WebElement more_button;
+    protected WebElement more_button;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[1]")
-    private WebElement add_to_cart;
+    protected WebElement add_to_cart;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
-    private WebElement cart;
+    protected WebElement cart;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-    private WebElement womenCategory;
+    protected WebElement womenCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-    private WebElement dressesCategory;
+    protected WebElement dressesCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a")
-    private WebElement summerDressesSubcategory;
+    protected WebElement summerDressesSubcategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[3]/a")
-    private WebElement tshirtCategory;
+    protected WebElement tshirtCategory;
 
     @FindBy(id = "search_query_top")
-    private WebElement searchBar;
+    protected WebElement searchBar;
+
+    @FindBy(id = "footer")
+    protected WebElement footer;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -75,6 +84,10 @@ public class HomePage extends PageObject{
 
     public void singOut(){
         this.sign_out_button.click();
+    }
+
+    public void clickOnLogo(){
+        this.logo.click();
     }
 
 }
