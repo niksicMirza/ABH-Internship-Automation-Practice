@@ -34,5 +34,5 @@ I have used following technologies in this project:
 - Open pom.xml file
 - Check if the dependencies are up to date
 - Install all dependencies
-- In "Select Run/Debug Configuration" select TestPlan.smokeTest
+- In "Select Run/Debug Configuration" select accountCreationAndCheckoutProcess
 - Click Run or Debug

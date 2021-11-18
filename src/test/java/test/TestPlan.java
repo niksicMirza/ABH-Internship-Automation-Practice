@@ -1,10 +1,13 @@
+package test;
+import POM.*;
+import data.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import static org.testng.AssertJUnit.*;
 
@@ -18,8 +21,8 @@ public class TestPlan {
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
     }
 
-    @Test(testName = "Smoke test")
-    public static void smokeTest() throws IOException {
+    @Test(testName = "Account Creation and Checkout Process")
+    public static void accountCreationAndCheckoutProcess() throws IOException {
 
         driver.get(Utils.HOME_PAGE_URL);
         driver.manage().window().maximize();

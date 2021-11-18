@@ -1,3 +1,5 @@
+package POM;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,46 +11,46 @@ public class HomePage extends PageObject{
     private final String SEARCH = "T-Shirt";
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/header[1]/div[3]/div[1]/div[1]/div[1]/a[1]/img[1]")
-    protected WebElement logo;
+    public WebElement logo;
 
     @FindBy(id = "block_top_menu")
-    protected WebElement top_menu;
+    public WebElement top_menu;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
-    protected WebElement sign_in_button;
+    public WebElement sign_in_button;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
-    protected WebElement sign_out_button;
+    public WebElement sign_out_button;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[1]/div/a[2]")
-    protected WebElement quick_view;
+    public WebElement quick_view;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[2]")
-    protected WebElement more_button;
+    public WebElement more_button;
 
     @FindBy(xpath = "//*[@id=\"homefeatured\"]/li[1]/div/div[2]/div[2]/a[1]")
-    protected WebElement add_to_cart;
+    public WebElement add_to_cart;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
-    protected WebElement cart;
+    public WebElement cart;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-    protected WebElement womenCategory;
+    public WebElement womenCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-    protected WebElement dressesCategory;
+    public WebElement dressesCategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a")
-    protected WebElement summerDressesSubcategory;
+    public WebElement summerDressesSubcategory;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[3]/a")
-    protected WebElement tshirtCategory;
+    public WebElement tshirtCategory;
 
     @FindBy(id = "search_query_top")
-    protected WebElement searchBar;
+    public WebElement searchBar;
 
     @FindBy(id = "footer")
-    protected WebElement footer;
+    public WebElement footer;
 
     public HomePage(WebDriver driver) {
         super(driver);

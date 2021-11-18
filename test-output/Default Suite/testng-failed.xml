@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
   <test thread-count="5" name="Selenium Testing(failed)">
     <classes>
-      <class name="TestPlan">
+      <class name="test.TestPlan">
         <methods>
           <include name="cleanUp"/>
-          <include name="smokeTest"/>
+          <include name="accountCreationAndCheckoutProcess"/>
         </methods>
-      </class> <!-- TestPlan -->
+      </class> <!-- test.TestPlan -->
     </classes>
   </test> <!-- Selenium Testing(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

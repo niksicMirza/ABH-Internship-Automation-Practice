@@ -1,3 +1,6 @@
+package POM;
+import data.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -8,106 +11,106 @@ public class CreateAnAccountPage extends PageObject{
     GenerateCredentials generateCredentials = new GenerateCredentials();
 
 
-    protected final String FIRST_NAME = "Tester";
-    protected final String LAST_NAME = "Tester";
-    protected final String ENCODED_PASSWORD = generateCredentials.encodePassword(GenerateCredentials.passwordGenerator());
-    protected final String PASSWORD = generateCredentials.decodePassword(ENCODED_PASSWORD);
-    protected final String DAY_OF_BIRTH = "14";
-    protected final String MONTH_OF_BIRTH = "10";
-    protected final String YEAR_OF_BIRTH = "1983";
-    protected final String FIRST_NAME_ADDRESS = "Tester";
-    protected final String LAST_NAME_ADDRESS = "Tester";
-    protected final String COMPANY = "Atlantbh";
-    protected final String ADDRESS = "Ruzevik 22";
-    protected final String CITY = "Sarajevo";
-    protected final String STATE = "Alabama";
-    protected final String STATE_VALUE = "1";
-    protected final String ZIP = "71251";
-    protected final String COUNTRY = "United States";
-    protected final String COUNTRY_VALUE = "21";
-    protected final String ADDITIONAL_INFORMATION = "Nulla quis lorem ut libero malesuada feugiat.";
-    protected final String MOBILE_NUMBER = "0636587";
-    protected final String HOME_NUMBER = "0335964";
-    protected final String ADDRESS_ALIAS = "My address";
+    public final String FIRST_NAME = "Tester";
+    public final String LAST_NAME = "Tester";
+    public final String ENCODED_PASSWORD = generateCredentials.encodePassword(GenerateCredentials.passwordGenerator());
+    public final String PASSWORD = generateCredentials.decodePassword(ENCODED_PASSWORD);
+    public final String DAY_OF_BIRTH = "14";
+    public final String MONTH_OF_BIRTH = "10";
+    public final String YEAR_OF_BIRTH = "1983";
+    public final String FIRST_NAME_ADDRESS = "Tester";
+    public final String LAST_NAME_ADDRESS = "Tester";
+    public final String COMPANY = "Atlantbh";
+    public final String ADDRESS = "Ruzevik 22";
+    public final String CITY = "Sarajevo";
+    public final String STATE = "Alabama";
+    public final String STATE_VALUE = "1";
+    public final String ZIP = "71251";
+    public final String COUNTRY = "United States";
+    public final String COUNTRY_VALUE = "21";
+    public final String ADDITIONAL_INFORMATION = "Nulla quis lorem ut libero malesuada feugiat.";
+    public final String MOBILE_NUMBER = "0636587";
+    public final String HOME_NUMBER = "0335964";
+    public final String ADDRESS_ALIAS = "My address";
 
 
     @FindBy(id = "id_gender1")
-    protected WebElement male_gender;
+    public WebElement male_gender;
 
     @FindBy(id = "id_gender2")
-    protected WebElement female_gender;
+    public WebElement female_gender;
 
     @FindBy(id = "customer_firstname")
-    protected WebElement customer_firstname;
+    public WebElement customer_firstname;
 
     @FindBy(id = "customer_lastname")
-    protected WebElement customer_lastname;
+    public WebElement customer_lastname;
 
     @FindBy(id = "email")
-    protected WebElement email;
+    public WebElement email;
 
     @FindBy(id = "passwd")
-    protected WebElement passwd;
+    public WebElement passwd;
 
     @FindBy(id = "days")
-    protected WebElement day_of_birth;
+    public WebElement day_of_birth;
 
     @FindBy(id = "months")
-    protected WebElement month_of_birth;
+    public WebElement month_of_birth;
 
     @FindBy(id = "years")
-    protected WebElement year_of_birth;
+    public WebElement year_of_birth;
 
     @FindBy(id = "newsletter")
-    protected WebElement newsletter;
+    public WebElement newsletter;
 
     @FindBy(id = "optin")
-    protected WebElement special_offers;
+    public WebElement special_offers;
 
     @FindBy(id = "firstname")
-    protected WebElement address_firstname;
+    public WebElement address_firstname;
 
     @FindBy(id = "lastname")
-    protected WebElement address_lastname;
+    public WebElement address_lastname;
 
     @FindBy(id = "company")
-    protected WebElement company;
+    public WebElement company;
 
     @FindBy(id = "address1")
-    protected WebElement address;
+    public WebElement address;
 
     @FindBy(id = "address2")
-    protected WebElement address2;
+    public WebElement address2;
 
     @FindBy(id = "city")
-    protected WebElement city;
+    public WebElement city;
 
     @FindBy(id = "id_state")
-    protected WebElement state;
+    public WebElement state;
 
     @FindBy(id = "postcode")
-    protected WebElement zip_code;
+    public WebElement zip_code;
 
     @FindBy(id = "id_country")
-    protected WebElement country;
+    public WebElement country;
 
     @FindBy(id = "other")
-    protected WebElement additional_information;
+    public WebElement additional_information;
 
     @FindBy(id = "phone")
-    protected WebElement home_number;
+    public WebElement home_number;
 
     @FindBy(id = "phone_mobile")
-    protected WebElement phone_number;
+    public WebElement phone_number;
 
     @FindBy(id = "alias")
-    protected WebElement alias;
+    public WebElement alias;
 
     @FindBy(id = "submitAccount")
-    protected WebElement submitAccount;
+    public WebElement submitAccount;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div")
-    protected WebElement createAccountError;
+    public WebElement createAccountError;
 
     public CreateAnAccountPage(WebDriver driver) {
         super(driver);
@@ -219,3 +222,4 @@ public class CreateAnAccountPage extends PageObject{
         this.createAccountError.isDisplayed();
     }
 }
+

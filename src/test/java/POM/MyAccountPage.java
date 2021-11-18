@@ -1,3 +1,5 @@
+package POM;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -5,19 +7,19 @@ import org.openqa.selenium.support.FindBy;
 public class MyAccountPage extends PageObject{
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a")
-    protected WebElement orderHistoryAndDetails;
+    public WebElement orderHistoryAndDetails;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[2]/a")
-    protected WebElement myCreditSlips;
+    public WebElement myCreditSlips;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[3]/a")
-    protected WebElement myAddress;
+    public WebElement myAddress;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[1]/ul/li[4]/a")
-    protected WebElement myPersonalInformation;
+    public WebElement myPersonalInformation;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div[2]/ul/li/a")
-    protected WebElement myWishlist;
+    public WebElement myWishlist;
 
 
 

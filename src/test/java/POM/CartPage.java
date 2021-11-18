@@ -1,67 +1,68 @@
+package POM;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class CartPage extends PageObject{
 
     @FindBy(id = "cart_summary")
-    protected WebElement cart_summary_box;
+    public WebElement cart_summary_box;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/form[1]/div[1]")
-    protected WebElement check_payment_box;
+    public WebElement check_payment_box;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]")
-    protected WebElement box_order_confirmation;
+    public WebElement box_order_confirmation;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/a[2]")
-    protected WebElement plus_button;
+    public WebElement plus_button;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[5]/input[2]")
-    protected WebElement quantity_box;
+    public WebElement quantity_box;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/h1[1]")
-    protected WebElement carts_headings;
+    public WebElement carts_headings;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/h1[1]")
-    protected WebElement carts_headings_shipping;
+    public WebElement carts_headings_shipping;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/p[2]/a[1]")
-    protected WebElement proceedToCheckoutButton;
+    public WebElement proceedToCheckoutButton;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/form[1]/p[1]/button[1]")
-    protected WebElement proceedToCheckoutButtonAddresses;
+    public WebElement proceedToCheckoutButtonAddresses;
 
     @FindBy(name = "processCarrier")
-    protected WebElement proceedToCheckoutButtonShipping;
+    public WebElement proceedToCheckoutButtonShipping;
 
     @FindBy(id = "id_address_delivery")
-    protected WebElement deliveryAddressDropdown;
+    public WebElement deliveryAddressDropdown;
 
     @FindBy(id = "address_delivery")
-    protected WebElement address_delivery_box;
+    public WebElement address_delivery_box;
 
     @FindBy(id = "address_invoice")
-    protected WebElement billing_address_box;
+    public WebElement billing_address_box;
 
     @FindBy(id = "addressesAreEquals")
-    protected WebElement addressesEqualCheckbox;
+    public WebElement addressesEqualCheckbox;
 
     @FindBy(id = "cgv")
-    protected WebElement termsOfServiceCheck;
+    public WebElement termsOfServiceCheck;
 
     @FindBy(xpath = "//*[@title='Pay by check.']")
-    protected WebElement payByCheckOption;
+    public WebElement payByCheckOption;
 
     @FindBy(xpath = "//*[@id=\"cart_navigation\"]/button")
-    protected WebElement confirmOrderButton;
+    public WebElement confirmOrderButton;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[7]/div[1]/a[1]")
-    protected WebElement icon_trash;
+    public WebElement icon_trash;
 
     @FindBy(id = "order_step")
-    protected WebElement order_steps;
+    public WebElement order_steps;
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -103,12 +104,5 @@ public class CartPage extends PageObject{
     public void clickProceedToCheckoutButtonShipping(){
         this.proceedToCheckoutButtonShipping.click();
     }
-
-
-
-
-
-
-
 
 }
